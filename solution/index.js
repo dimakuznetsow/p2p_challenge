@@ -23,59 +23,57 @@ let chosenIds = [];
 
 /* ADD/REMOVE CARDS */
 
-const printCards = (characters) => {
-  characters.forEach((character) => {
-    const { id, name, image, status, species, gender, points } = character;
-    const card = document.createElement("div");
-    card.classList.add("card");
+const printCards = characters.forEach((character) => {
+  const { id, name, image, status, species, gender, points } = character;
+  const card = document.createElement("div");
+  card.classList.add("card");
 
-    const textContainer = document.createElement("div");
-    textContainer.classList.add("card-container");
+  const textContainer = document.createElement("div");
+  textContainer.classList.add("card-container");
 
-    const titleElement = document.createElement("h2");
-    const titleText = document.createTextNode(name);
-    titleElement.appendChild(titleText);
+  const titleElement = document.createElement("h2");
+  const titleText = document.createTextNode(name);
+  titleElement.appendChild(titleText);
 
-    const img = document.createElement("img");
-    img.setAttribute("src", image);
+  const img = document.createElement("img");
+  img.setAttribute("src", image);
 
-    const statusElement = document.createElement("p");
-    const statusText = document.createTextNode(`Status: ${status}`);
-    statusElement.appendChild(statusText);
+  const statusElement = document.createElement("p");
+  const statusText = document.createTextNode(`Status: ${status}`);
+  statusElement.appendChild(statusText);
 
-    const speciesElement = document.createElement("p");
-    const speciesText = document.createTextNode(`Species: ${species}`);
-    speciesElement.appendChild(speciesText);
+  const speciesElement = document.createElement("p");
+  const speciesText = document.createTextNode(`Species: ${species}`);
+  speciesElement.appendChild(speciesText);
 
-    const genderElement = document.createElement("p");
-    const genderText = document.createTextNode(`Sex: ${gender}`);
-    genderElement.appendChild(genderText);
+  const genderElement = document.createElement("p");
+  const genderText = document.createTextNode(`Sex: ${gender}`);
+  genderElement.appendChild(genderText);
 
-    const pointsElement = document.createElement("p");
-    const pointsText = document.createTextNode(`Points: ${points}`);
-    pointsElement.appendChild(pointsText);
+  const pointsElement = document.createElement("p");
+  const pointsText = document.createTextNode(`Points: ${points}`);
+  pointsElement.appendChild(pointsText);
 
-    const buttonContainer = document.createElement("div");
-    buttonContainer.classList.add("button-container");
-    const button = document.createElement("button");
-    button.setAttribute("id", `${id}`);
-    button.classList.add("choose-button");
-    const buttonText = document.createTextNode("Choose");
-    button.appendChild(buttonText);
-    buttonContainer.appendChild(button);
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("button-container");
+  const button = document.createElement("button");
+  button.setAttribute("id", `${id}`);
+  button.classList.add("choose-button");
+  const buttonText = document.createTextNode("Choose");
+  button.appendChild(buttonText);
+  buttonContainer.appendChild(button);
 
-    card.appendChild(img);
-    card.appendChild(textContainer);
-    textContainer.appendChild(titleElement);
-    textContainer.appendChild(statusElement);
-    textContainer.appendChild(speciesElement);
-    textContainer.appendChild(genderElement);
-    textContainer.appendChild(pointsElement);
-    textContainer.appendChild(buttonContainer);
+  card.appendChild(img);
+  card.appendChild(textContainer);
+  textContainer.appendChild(titleElement);
+  textContainer.appendChild(statusElement);
+  textContainer.appendChild(speciesElement);
+  textContainer.appendChild(genderElement);
+  textContainer.appendChild(pointsElement);
+  textContainer.appendChild(buttonContainer);
 
-    characterContainer.appendChild(card);
-  });
-};
+  characterContainer.appendChild(card);
+});
 
 const cleanCardContainer = () => {
   characterContainer.innerHTML = "";
